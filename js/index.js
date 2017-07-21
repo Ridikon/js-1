@@ -209,13 +209,85 @@ function sortNum(a, b) {
   var ar = [-1, 8, -3, 0, 7];
   
   console.log(task03(ar));*/
-  
-  function consoleRec(arr, br){
 
-	console.log(arr + br);
-   if(arr){
-   	consoleRec(arr);
-   }
+/*var allNumbers = [1, 2, 4, 5, 6, 7, 8],
+    someNumbers = [1, 2, 'привет', 4, 5, 'loftschool', 6, 7, 8],
+    noNumbers = ['это', 'массив', 'без', 'чисел'],
+    noArr = [];
+
+function isAllTrue(sourse, filterFn) {
+    if (sourse.length == 0) {
+        throw new Error('Порожній масив');
+    }
+    var val = undefined;
+    for (var i = 0; i < sourse.length; i++) {
+        var val = sourse[i];
+        if (filterFn(val) == true) {
+            return true;
+        }
+    }
+    return false;
 }
 
-consoleRec(['я', 'умею', 'писать', 'рекурсивные', 'функции'], '<br>');
+function isNumber(val) {
+    return typeof val === 'number';
+}
+
+console.log(isAllTrue(allNumbers, isNumber)); //вернет true
+console.log(isAllTrue(someNumbers, isNumber)); //вернет false
+console.log(isAllTrue(noNumbers, isNumber)); //вернет false
+try {
+    console.log(isAllTrue(noArr, isNumber));
+}
+catch (e) {
+    console.error(e.message);
+}*/
+
+
+function calculator(firstNumber) {
+    sum = function() {
+        firstNumber = undefined;
+        for (var i = 0; i < arguments.length; i++) {
+            firstNumber += arguments[i];
+        }
+        return firstNumber;
+    },
+    dif = function () {
+        firstNumber = undefined;
+        for (var i = 0; i < arguments.length; i++) {
+            firstNumber -= arguments[i];
+        }
+        return firstNumber;
+    },
+    div = function () {
+        firstNumber = undefined;
+        for (var i = 0; i < arguments.length; i++) {
+            if(arguments[i] == 0){
+                throw new Error('На 0 ділити не можна');
+            }
+            firstNumber /= arguments[i];
+        }
+        return firstNumber;
+    },
+    mul = function () {
+        firstNumber = undefined;
+        for (var i = 0; i < arguments.length; i++) {
+            firstNumber *= arguments[i];
+        }
+        return firstNumber;
+    }
+}
+
+var myCalculator = calculator(100);
+
+console.log(myCalculator.sum(1, 2, 3)); //вернет 106
+console.log(myCalculator.dif(10, 20)); //вернет 70
+
+try{
+   console.log(myCalculator.div(2, 2)); //вернет 25 
+}
+catch(e){
+    console.error(e.message);
+}
+
+console.log(myCalculator.mul(2, 2)); //вернет 400

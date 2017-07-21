@@ -193,7 +193,7 @@
 
 // console.log(task03b());
 
-function task03(array) {
+/*function task03(array) {
 	array.sort(sortNum);
 	var hash = {};
 	hash["min"] = array[0];
@@ -208,4 +208,14 @@ function sortNum(a, b) {
   
   var ar = [-1, 8, -3, 0, 7];
   
-  console.log(task03(ar));
+  console.log(task03(ar));*/
+  
+  function consoleRec(arr, br){
+
+	console.log(arr + br);
+   if(arr){
+   	consoleRec(arr);
+   }
+}
+
+consoleRec(['я', 'умею', 'писать', 'рекурсивные', 'функции'], '<br>');
